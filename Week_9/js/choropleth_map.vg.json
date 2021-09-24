@@ -21,7 +21,7 @@
         "lookup": "properties.NAME",
         "from":{
             "data":{
-                "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Week%209/data/population_by_country_2020.csv"
+                "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Week_9/data/population_by_country_2020.csv"
             },
             "key": "Country (or dependency)",
             "fields": ["Population (2020)"]
