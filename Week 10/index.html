@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+  
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="css/styles.css" media="all">
+  
+</head>
+<body>
+
+<div class="header1">
+  <h1>Week 9 Visualization</h1>
+</div>
+
+<div id="choropleth_map"></div>
+
+<script>
+  var spec3 = "js/choropleth_map.vg.json";
+  vegaEmbed('#choropleth_map', spec3).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+</script>
+
+<div class="header2">
+  <h2>Week 10 Visualization</h2>
+</div>
+  
+<div id="scatter_plot"></div>
+
+
+<script type="text/javascript">
+
+  var spec2 = "js/scatterplot.vg.json";
+  vegaEmbed('#scatter_plot', spec2).then(function(result) {
+    // Access the Vega view instance (https://vega.github.io/vega/docs/api/view/) as result.view
+  }).catch(console.error);
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,145 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "title": "Wasting per country",
+    "data": {
+      "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Week%2010/data/country-wise-average.csv"
+    },
+    "params": [
+      {
+        "name": "Country_selection",
+        "bind": {
+          "input": "select",
+          "options": [
+            null,
+            "Show All",
+            "SOUTH SUDAN",
+            "DJIBOUTI",
+            "INDIA",
+            "CHAD",
+            "COMOROS (THE)",
+            "YEMEN",
+            "SYRIAN ARAB REPUBLIC (THE)",
+            "TIMOR-LESTE",
+            "SUDAN (THE)",
+            "MALDIVES", 
+            "ERITREA"
+          ],
+          "labels":[
+            "Show All",
+            "SOUTH SUDAN",
+            "DJIBOUTI",
+            "INDIA",
+            "CHAD",
+            "COMOROS (THE)",
+            "YEMEN",
+            "SYRIAN ARAB REPUBLIC (THE)",
+            "TIMOR-LESTE",
+            "SUDAN (THE)",
+            "MALDIVES", 
+            "ERITREA"
+          ],
+          "name": "Country Selection: "
+        }
+      }
+    ],
+    "transform": [
+      {"filter": "datum.Wasting > 0"},
+      {"filter": "Country_selection == null || datum.Country == Country_selection"}
+    ],
+    "encoding": {
+      "x": {
+        "field": "Severe Wasting",
+        "type": "quantitative",
+        "title": "Severe Wasting",
+        "axis": {"tickCount": 6}
+      },
+      "y": {
+        "field": "Wasting",
+        "type": "quantitative",
+        "axis": {"tickCount": 7}
+      }
+    },
+    "layer": [
+      {
+        "selection": {
+          "country_highlight": {
+            "type": "multi",
+            "fields": ["Country"],
+            "bind": "legend"
+          }
+        },
+        "mark": "circle",
+        "encoding": {
+          "size": {
+            "field": "Wasting",
+            "type": "quantitative",
+            "scale": {
+              "type": "threshold",
+              "domain": [0, 1 , 2 , 3 , 4],
+              "range": [10, 50, 150, 200, 300, 400]
+            },
+            "legend": {"format": ".1s"}
+          },
+          "color": {
+            "field": "Country",
+            "type": "nominal",
+            "scale": {
+              "domain": [
+                "Show All",
+                "SOUTH SUDAN",
+                "DJIBOUTI",
+                "INDIA",
+                "CHAD",
+                "COMOROS (THE)",
+                "YEMEN",
+                "SYRIAN ARAB REPUBLIC (THE)",
+                "TIMOR-LESTE",
+                "SUDAN (THE)",
+                "MALDIVES", 
+                "ERITREA"
+              ]
+            }
+          },
+          "opacity": {
+            "condition": {"selection": "country_highlight", "value": 0.6},
+            "value": 0.2
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Income Classification", "type": "quantitative", "format": ","},
+            {"field": "Severe Wasting", "type": "quantitative", "format": ","},
+            {"field": "Wasting", "type": "quantitative", "format": ","},
+            {"field": "Overweight", "type": "quantitative", "format": ","}
+          ]
+        }
+      },
+      {
+        "mark": {
+          "type": "text",
+          "align": "right",
+          "baseline": "middle",
+          "dx": -12,
+          "fontSize": 11.5,
+          "fontStyle": "italic"
+        },
+        "encoding": {
+          "text": {"field": "Country", "type": "nominal"},
+          "color": {"value": "black"},
+          "opacity": {
+            "value": 0
+          },
+          "tooltip": [
+            {"field": "Country", "type": "nominal"},
+            {"field": "Income Classification", "type": "quantitative", "format": ","},
+            {"field": "Severe Wasting", "type": "quantitative", "format": ","},
+            {"field": "Wasting", "type": "quantitative", "format": ","},
+            {"field": "Overweight", "type": "quantitative", "format": ","}
+            
+        
+          ]
+        }
+      }
+    ]
+  }
