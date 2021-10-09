@@ -3,9 +3,8 @@
 	bottom: 100px; 
 	left: 100px;
 	right: 100px;
-	align-items: center;
 	/* height: 800px;
-	width: 800px; */
+	width: 500px; */
 }
 
 #scatter_plot {
@@ -14,14 +13,15 @@
 	left: 100x;
 	right: 100px;
 	text-align: center;
-	align-items: center;
-	/* height: 800px;
-	width: 800px; */
+	/* height: 800px; */
+	/* width: 800px; */
 }
 
 
-h1 {text-align: center;}
-h2 {text-align: center;}
+
+h2 {text-align: left;}
+
+
 
 
 
