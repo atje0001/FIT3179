@@ -1,0 +1,64 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title" : "Population in 2020 per Country",
+    "width" : 800, 
+    "height" : 600,
+    "projection": {
+        "type": "equirectangular"
+    },
+
+    "data": {
+        "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/ne_110m_admin_0_countries.topojson",
+        "format": {
+            "type": "topojson",
+            "feature": "ne_110m_admin_0_countries"
+        }
+    }, 
+    "transform": [
+        
+        
+        {
+        "lookup": "properties.NAME",
+        "from":{
+            "data":{
+                "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Week%209/data/population_by_country_2020.csv"
+            },
+            "key": "Country (or dependency)",
+            "fields": ["Population (2020)"]
+            
+        }
+        }
+
+    ],
+    
+
+
+
+    
+
+    "mark": {
+        "type": "geoshape"
+    },
+
+    "encoding": {
+        "color":{
+            "field": "Population (2020)",
+            "type": "quantitative",
+            "scale": {
+                "type" : "threshold",
+                "domain": [10000000, 20000000,30000000, 40000000, 50000000, 60000000, 70000000, 80000000 ],
+                "range": ["#656565", "#D6C7C7", "#FDC6C6", "#FF9C9C", "#CE5B5B", "#AB3939", "#9E1717", "#6F0000"]
+            }
+
+
+
+        },
+        "tooltip": [
+            {"field": "properties.NAME", "type": "nominal", "title" : "Country "},
+            {"field": "Population (2020)", "type" : "quantitative" , "title" : "Population (2020)"}
+        ]
+    }
+    
+
+    
+}
