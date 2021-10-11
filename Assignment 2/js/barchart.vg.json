@@ -1,0 +1,79 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+        "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Assignment%202/data/Health_Risk_factors.csv"
+    },
+    "title" : "Bar chart",
+    "width" : 800, 
+    "height" : 600,
+
+    "transform": [
+        {
+            "window": [{
+                "op":"rank",
+                "as": "rank"
+            }],
+            "sort": [{"field": "Incidence of tuberculosis  per 100,000 people 2018", "order": "ascending"
+        }]
+        },
+        {"filter": "datum.rank <= 10"}
+    ],
+
+    "params": [
+        {
+          "name": "highlight",
+          "select": {"type": "point", "on": "mouseover"}
+        },
+        {"name": "select", "select": "point"}
+      ],
+      "mark": {
+        "type": "bar",
+        "stroke": "black",
+        "cursor": "pointer"
+      },
+    "encoding": {
+        "x": {
+            "field" : "Incidence of tuberculosis  per 100,000 people 2018",
+            "type": "quantitative"
+        },
+
+        "y": {
+            "field": "Country",
+            "type": "nominal",
+            "sort": {"field": "Incidence of tuberculosis  per 100,000 people 2018", "order": "ascending"}
+            
+        },
+        "fillOpacity": {
+            "condition": {"param": "select"},
+            "value": 0.2
+          },
+
+        "strokeWidth": {
+            "condition": [
+              {
+                "param": "select",
+                "empty": false
+              },
+              {
+                "param": "highlight",
+                "empty": false
+              }
+            ],
+            "value": 0
+        }
+    }
+
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
