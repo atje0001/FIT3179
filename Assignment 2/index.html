@@ -14,27 +14,81 @@
 </head>
 <body>
 
-<div id="choropleth_map"></div>
-
-<script type = "text/javascript">
-
-    var viz = "js/choropleth_map.vg.json";
-    vegaEmbed('#choropleth_map', viz).then(function(result){
-
-    }).catch(console.error);
-
-</script>
+<!-- <h2> Top 10 countries with least incidence of tubercolosis </h2> -->
 
 <div id="barchart"></div>
 
 <script type = "text/javascript">
 
-    var viz1 = "js/barchart.vg.json";
-    vegaEmbed('#barchart', viz1).then(function(result){
+    var viz = "js/barchart.vg.json";
+    vegaEmbed('#barchart', viz).then(function(result){
 
     }).catch(console.error);
 
 </script>
+
+
+<!-- <h2> World Map of incidence of tubercolosis </h2> -->
+
+<div id="choropleth_map"></div>
+
+<script type = "text/javascript">
+
+    var viz1 = "js/choropleth_map.vg.json";
+    vegaEmbed('#choropleth_map', viz1).then(function(result){
+
+    }).catch(console.error);
+
+</script>
+
+<!-- <div id="linearregression"></div>
+
+<script type = "text/javascript">
+
+    var viz2 = "js/linearregression.vg.json";
+    vegaEmbed('#linearregression', viz2).then(function(result){
+
+    }).catch(console.error);
+
+</script> -->
+
+
+<!-- <div id="piechart"></div>
+
+<script type = "text/javascript">
+
+    var viz3 = "js/piechart.vg.json";
+    vegaEmbed('#piechart', viz3).then(function(result){
+
+    }).catch(console.error);
+
+</script> -->
+
+<!-- <div id="scatterplot"></div>
+
+<script type = "text/javascript">
+
+    var viz4 = "js/scatterplot.vg.json";
+    vegaEmbed('#scatterplot', viz4).then(function(result){
+
+    }).catch(console.error);
+
+</script> -->
+
+<!-- <h2> Scatterplot matrix of male & female smoking </h2> -->
+
+<div id="scatterplotmatrix"></div>
+
+<script type = "text/javascript">
+
+    var viz5 = "js/scatterplotmatrix.vg.json";
+    vegaEmbed('#scatterplotmatrix', viz5).then(function(result){
+
+    }).catch(console.error);
+
+</script>
+
+
     
 </body>
 </html>

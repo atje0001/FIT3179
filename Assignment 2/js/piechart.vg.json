@@ -1,0 +1,14 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A simple pie chart with embedded data.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Assignment%202/data/Health_Risk_factors.csv"
+    },
+    "mark": "arc",
+    "encoding": {
+      "theta": {"field": "Incidence of tuberculosis  per 100,000 people 2018", "type": "quantitative"},
+      "color": {"field": "Country", "type": "nominal"}
+    }
+  }
+
+  

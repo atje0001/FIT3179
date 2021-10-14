@@ -1,0 +1,67 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {
+      "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Assignment%202/data/Health_Risk_factors.csv"
+    },
+    "layer": [
+      {
+        "mark": {
+          "type": "point",
+          "filled": true
+        },
+        "encoding": {
+          "x": {
+            "field": "Prevalence of smoking Male % of adults 2016",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Prevalence of smoking female % of adults 2016",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "mark": {
+          "type": "line",
+          "color": "firebrick"
+        },
+        "transform": [
+          {
+            "regression": "Prevalence of smoking Male % of adults 2016",
+            "on": "Prevalence of smoking female % of adults 2016"
+          }
+        ],
+        "encoding": {
+          "x": {
+            "field": "Prevalence of smoking Male % of adults 2016",
+            "type": "quantitative"
+          },
+          "y": {
+            "field": "Prevalence of smoking female % of adults 2016",
+            "type": "quantitative"
+          }
+        }
+      },
+      {
+        "transform": [
+          {
+            "regression": "Prevalence of smoking Male % of adults 2016",
+            "on": "Prevalence of smoking female % of adults 2016",
+            "params": true
+          },
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+        ],
+        "mark": {
+          "type": "text",
+          "color": "firebrick",
+          "x": "width",
+          "align": "right",
+          "y": -5
+        },
+        "encoding": {
+          "text": {"type": "nominal", "field": "R2"}
+        }
+      }
+    ]
+  }
+  

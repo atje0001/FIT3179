@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Scatterplot matrix",
+    "repeat": {
+      "row": ["Prevalence of smoking Male % of adults 2016", "Prevalence of smoking female % of adults 2016","Prevalence of HIV Total % of population ages 15-49 2018"],
+      "column": ["Prevalence of HIV Total % of population ages 15-49 2018","Prevalence of smoking female % of adults 2016", "Prevalence of smoking Male % of adults 2016"]
+    },
+    "spec": {
+      "data": {"url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Assignment%202/data/Health_Risk_factors.csv"},
+      "mark": "point",
+      
+      "encoding": {
+        "x": {"field": {"repeat": "column"}, "type": "quantitative"},
+        "y": {
+          "field": {"repeat": "row"},
+          "type": "quantitative",
+          "axis": {"minExtent": 30}
+        },
+        "color": {
+          
+          "value": "red"
+        }
+      }
+    }
+  }
+  
