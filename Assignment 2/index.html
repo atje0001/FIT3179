@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Visualization Map </title>
+    <title>Assignment 2 </title>
 
     <!-- Import Vega & Vega-Lite (does not have to be from CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/vega@5.20.2"></script>
@@ -14,81 +14,96 @@
 </head>
 <body>
 
-<!-- <h2> Top 10 countries with least incidence of tubercolosis </h2> -->
+<div class="page">
+    <div>
+    <h1 style="line-height: 1.5; text-align: center;">Health Risk Factor</h1>
+    <h2 style="line-height: 1.5; text-align: left;"> Intoduction </h2>
+    <p style="line-height: 1.5; text-align: left;">  The Health Risk represents the health system of countries whether it is high or low it depends on the characteristics or exposures from each person that has inherited disease or external factors that might trigger the disease.
+        There are various factors that can cause ill-health or premature death like for example tobacco use, high body mass, tuberculosis, etc. Additionally, there are also inherited disease that might affects individual's health. Even though
+        health system and policies play a significant role in each countries but these factors affects a lot into the system. In this page, multiple visualizations will be shown of how each countries have high or low cases such as % of male 
+        or female smoking, incidence of tuberculosis cases and % of people getting diabetes. These datasets are taken from Kaggle by Noor B.A where the author generate the datasets from World Bank.   </p>
+    </div>
+    
 
-<div id="barchart"></div>
+    <div id="choropleth_map"></div>
 
-<script type = "text/javascript">
+    <script type = "text/javascript">
 
-    var viz = "js/barchart.vg.json";
-    vegaEmbed('#barchart', viz).then(function(result){
+        var viz1 = "js/choropleth_map.vg.json";
+        vegaEmbed('#choropleth_map', viz1).then(function(result){
 
-    }).catch(console.error);
+        }).catch(console.error);
 
-</script>
+    </script>
 
+    
+    <br>
+    <br>
+    <br>
 
-<!-- <h2> World Map of incidence of tubercolosis </h2> -->
-
-<div id="choropleth_map"></div>
-
-<script type = "text/javascript">
-
-    var viz1 = "js/choropleth_map.vg.json";
-    vegaEmbed('#choropleth_map', viz1).then(function(result){
-
-    }).catch(console.error);
-
-</script>
-
-<!-- <div id="linearregression"></div>
-
-<script type = "text/javascript">
-
-    var viz2 = "js/linearregression.vg.json";
-    vegaEmbed('#linearregression', viz2).then(function(result){
-
-    }).catch(console.error);
-
-</script> -->
+    <div>
+    <h2 style="line-height: 1.5; text-align: center;"> World Map of Tuberculosis Disease </h2>
+    <p style="line-height: 1.5; text-align: justify;"> Beside shown is a visualization of a world map with incidence of tuberculosis per 100,000 people in 2018. The acrynoym tb in the legend stands for tuberculosis. From the visualization, the darker the color means the higher the incidence of tuberculosis happening in that country whereas the lighter the color means lesser incidence of tuberculosis happening in that country. Additionally, country that has light gray color means that it is null values or in other words the datasets did not have values of the countries.
+    Tooltip is also implemented where user can hover their mouse to the countries and additional information like Countries, number of incidence or data not available of countries with no data will be shown. </p>
+    <p style="line-height: 1.5; text-align: justify;"> It has been shown that the most countries that have the highest incidence is <b>Lesotho</b> having <b>611,000</b> incidence, followed by <b>Phillipines</b> having <b>554,000</b> incidence and <b>Mozambique</b> with <b>551,000</b> incidence.  </p> 
+    <p style="line-height: 1.5; text-align: justify;"> Overall, most countries have tuberculosis incidence which is one the risk factors that might affects countries' health system. </p> 
+    </div>
 
 
-<!-- <div id="piechart"></div>
 
-<script type = "text/javascript">
+    <!-- <h2> Top 10 countries </h2> -->
 
-    var viz3 = "js/piechart.vg.json";
-    vegaEmbed('#piechart', viz3).then(function(result){
+    
 
-    }).catch(console.error);
+    <div id="barchart">
 
-</script> -->
+    </div>
 
-<!-- <div id="scatterplot"></div>
+    <br><br><br><br><br><br><br><br>
+    
 
-<script type = "text/javascript">
+    <div>
+    <h2 style="line-height: 1.5; text-align: center;"> Top 10 Countries with least % of diabetes disease  </h2>
+    <p style="line-height: 1.5; text-align: justify;"> Beside shown is a visualization of an interactive bar chart with the least incidence of Prevalence of diabetes % of population from the age of 20 to 79 in 2019. The user can interact with the bar chart where if user click on the bar then the bar will be highlighted which focuses more on that bar. In addition, a tooltip is shown when user hover their mouse to the bar chart. </p>
+    <p style="line-height: 1.5; text-align: justify;"> It has been shown that the top 10 countries that have the least cases of diabetes is <b>Benin</b> having <b>1%</b> of population having diabetes, followed by <b>Zimbabwe</b> having <b>1.8%</b> of population having diabetes, then <b>Gambia, The</b> having <b>1.9%</b> of population having diabetes, then <b>Guatemala </b> having <b>10%</b> of population having diabetes, then <b>Oman</b> having <b>10.1%</b> of population having diabetes, then <b>Libya, The</b> having <b>10.2%</b> of population having diabetes, 
+        then <b>South Sudan</b> having <b>10.2%</b> of population having diabetes, then <b>Bhutan</b> having <b>10.3%</b> of population having diabetes, then <b>Brazil</b> having <b>10.4%</b> of population having diabetes, then <b>Germany</b> having <b>10.4%</b> of population having diabetes and lastly <b>India</b> having <b>10.4%</b> of population having diabetes. </p> 
+    <p style="line-height: 1.5; text-align: justify;"> Overall, these countries health system might be better due to having the least % of diabetes disease in 2019. 
+    </div>
 
-    var viz4 = "js/scatterplot.vg.json";
-    vegaEmbed('#scatterplot', viz4).then(function(result){
+    <script type = "text/javascript">
 
-    }).catch(console.error);
+        var viz = "js/barchart.vg.json";
+        vegaEmbed('#barchart', viz).then(function(result){
 
-</script> -->
+        }).catch(console.error);
 
-<!-- <h2> Scatterplot matrix of male & female smoking </h2> -->
+    </script>
+    
+    br><br><br><br><br>
+    
 
-<div id="scatterplotmatrix"></div>
+    <div id="linearregression"></div>
 
-<script type = "text/javascript">
+    <div>
+        <br><br><br><br><br>
+    
+        <h2 style="line-height: 1.5; text-align: center;"> Linear Regression of Prevelance of % Smoking </h2>
+        <p style="line-height: 1.5; text-align: justify;"> Beside shown is a visualization of linear regression of 2 variables which is Prevalance of % Male and Female adults smoking in the year 2016. On the top right corner, the R-squared value is being shown to see whether these 2 data attributes are correlated to each other. User can hover their mouse to the marks to find additional information like Country, % of male smoking and % of female smoking.  </p>
+        <p style="line-height: 1.5; text-align: justify;"> As a lot of countries are being put in the scatterplot, we can see that these data are disperse far from each other which means that there are no correlation between 2 datasets. This is suppored by the calculation of <b>r-squared</b> which is <b>0.05</b> </p>
+            
+        <p style="line-height: 1.5; text-align: justify;"> Therefore, Prevalance of % Male adults smoking does not affects Prevalance of % Female adults smoking which means that both attributes are independant variables. 
+    </div>
 
-    var viz5 = "js/scatterplotmatrix.vg.json";
-    vegaEmbed('#scatterplotmatrix', viz5).then(function(result){
+    <script type = "text/javascript">
 
-    }).catch(console.error);
+        var viz2 = "js/linearregression.vg.json";
+        vegaEmbed('#linearregression', viz2).then(function(result){
 
-</script>
+        }).catch(console.error);
 
+    </script>
 
+</div>
     
 </body>
 </html>

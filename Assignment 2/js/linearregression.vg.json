@@ -1,5 +1,8 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "title": "Linear Regression of 2 variables",
+    "width" : 960, 
+    "height" : 500,
     "data": {
       "url": "https://raw.githubusercontent.com/atje0001/FIT3179/main/Assignment%202/data/Health_Risk_factors.csv"
     },
@@ -17,7 +20,13 @@
           "y": {
             "field": "Prevalence of smoking female % of adults 2016",
             "type": "quantitative"
-          }
+          }, 
+          "tooltip":[
+            {"field": "Country", "type": "nominal", "title": "Country"},
+            {"field": "Prevalence of smoking Male % of adults 2016", "type": "quantitative", "title": "% of male smoking"},
+            {"field": "Prevalence of smoking female % of adults 2016", "type": "quantitative", "title": "% of female smoking"}
+          ]
+
         }
       },
       {
@@ -49,19 +58,21 @@
             "on": "Prevalence of smoking female % of adults 2016",
             "params": true
           },
-          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+          {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R-squared"}
         ],
         "mark": {
           "type": "text",
-          "color": "firebrick",
+          "size": 15,
+          "color": "red",
           "x": "width",
           "align": "right",
           "y": -5
         },
         "encoding": {
-          "text": {"type": "nominal", "field": "R2"}
+          "text": {"type": "nominal", "field": "R-squared"}
         }
       }
-    ]
+    ],
+    "config": {"background":"#faefcc"}
   }
   

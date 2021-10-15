@@ -1,26 +1,66 @@
 #barchart {
 	top:100px;
 	bottom: 100px; 
-	left: 100px;
+	left: 50px;
 	right: 100px;
+	float: right;
 	/*height: 1000px;
 	width: 800px;*/
 }
 
 #choropleth_map {
-	top:100px;
+	top:40px;
+	bottom: 80x; 
+	left: 20px;
+	right: 100px; 
+	float: left;
+}
+
+#linearregression {
+	top:40px;
 	bottom: 100px; 
-	left: 100px;
+	left: 20px;
 	right: 100px;
+	float: left;
 	/*height: 1000px;
 	width: 800px;*/
 }
 
-#scatterplotmatrix {
-	top:100px;
-	bottom: 100px; 
-	left: 100px;
-	right: 100px;
-	/*height: 1000px;
-	width: 800px;*/
+/* layout  */
+body{
+	background-color: #faefcc;
+  } 
+
+.page{
+	width: 2000px;  
+	height: auto;  
+	background-color: #faefcc;   
+	margin: auto;
+	padding: 50px;
+	padding-top: 50px;
+	padding-left: 110px;
+	padding-right: 110px;
+	padding-bottom: 50px;
+ }
+
+h1{text-align: center;}
+p{font-size: 20px;}
+
+vis-container{
+	width: 100%;
+  }
+.description h2, h1{
+margin-top:0px;
+}
+.description-right {
+padding-left: 20px;
+}
+.description-left{
+padding-right: 50px;
+}
+.pure-g{
+margin-bottom: 20px;}
+
+.rightalign{
+	text-align: right;
 }
