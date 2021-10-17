@@ -43,6 +43,8 @@
             "sort": {"field": "Prevalence of diabetes  % of population ages 20 to 79 2019", "order": "ascending"}
             
         },
+        "color":{"value": "#dd6464"},
+
         "tooltip": [
           {"field": "Country", "type": "nominal", "title": "Country"},
           {"field": "Prevalence of diabetes  % of population ages 20 to 79 2019", "type": "quantitative", "title": "% of diabetes"}
@@ -66,7 +68,7 @@
             "value": 0
         }
     },
-    "config": {"background":"#faefcc"}
+    "config": {"background":"#faefcc", "font": "Arial", "title": {"fontSize": 20 }, "axisX": {"titleFontSize": 15}, "axisY": {"titleFontSize": 15}}
 
     
 }

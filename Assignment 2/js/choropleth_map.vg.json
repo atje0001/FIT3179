@@ -1,6 +1,6 @@
 {
     "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
-    "title" : "Incidence of tuberculosis per 100,000 people 2018 per Country",
+    "title" : "Incidence of tuberculosis per 100,000 people in 2018 per Country",
     "width" : 800, 
     "height" : 500,
     "projection": {"type": "equirectangular"},
@@ -75,7 +75,7 @@
     
         } 
     ],
-    "config": {"background":"#faefcc"}
+    "config": {"background":"#faefcc", "font": "Arial", "title": {"fontSize": 20 }, "legend": {"titleFontSize": 10 }}
 }
 
     

@@ -21,6 +21,7 @@
             "field": "Prevalence of smoking female % of adults 2016",
             "type": "quantitative"
           }, 
+          "color": {"value": "#dd6464"},
           "tooltip":[
             {"field": "Country", "type": "nominal", "title": "Country"},
             {"field": "Prevalence of smoking Male % of adults 2016", "type": "quantitative", "title": "% of male smoking"},
@@ -47,6 +48,7 @@
           },
           "y": {
             "field": "Prevalence of smoking female % of adults 2016",
+            "title": "Prevalence of smoking Female % of adults 2016",
             "type": "quantitative"
           }
         }
@@ -73,6 +75,6 @@
         }
       }
     ],
-    "config": {"background":"#faefcc"}
+    "config": {"background":"#faefcc", "font": "Arial", "title": {"fontSize": 20 }, "axisX": {"titleFontSize": 15}, "axisY": {"titleFontSize": 15}}
   }
   
